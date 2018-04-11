@@ -15,14 +15,27 @@ function createDeck(){
 }
 
 function getNextCard() {
-	return	deck.shift()
+	var randomItem = deck[Math.floor(Math.random()*deck.length)]
+	var  index = deck.indexOf(randomItem)
+	if (index > -1){
+		deck.splice(index, 1);
+	}
+	return	randomItem
 }
-
 let deck = createDeck();
+console.log("Initial length of deck: ", deck.length);
 
-let playerCards = [getNextCard(), getNextCard()]
+let player1Cards = [getNextCard(), getNextCard()]
+let player2Cards = [getNextCard(), getNextCard()]
 
-console.log("BlackJack!")
-console.log("Player Cards: ")
-console.log("\t " + playerCards[0]);
-console.log("\t " + playerCards[1]);
+
+console.log("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ")
+console.log("Welcome to BlackJack!")
+console.log("Player 1 Cards: ")
+console.log("\t " + player1Cards[0]);
+console.log("\t " + player1Cards[1]);
+console.log("Player 2 Cards: ")
+console.log("\t " + player2Cards[0]);
+console.log("\t " + player2Cards[1]);
+console.log("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ")
+console.log("Final length of deck:" , deck.length)
