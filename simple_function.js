@@ -1,7 +1,4 @@
 function triploPlus(num){
-	let newValue = num*3+1;
-	return newValue;
+	console.log('guina viado')
 }
 
-let result = triploPlus(3)
-console.log(result)
